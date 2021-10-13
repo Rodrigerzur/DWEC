@@ -5,25 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table{
+            border-collapse:collapse;
+            margin:0;
+            width:100%;
+        }
+        td{
+            border:solid black 3px;
+            text-align: center;
+        }
+        td:nth-child(odd){
+            background-color: gray;
+            color:white;
+        }
+    </style>
 </head>
 <body>
     <script>   
-    let n;
-var lista="";
-let suma=0;
-do{
-        n=prompt("INTRODUCE UN NUMERO");
-        if(isNaN(n)){
-            lista=lista + n + "</br>";
-        }
-        else if(n!=null){
-          suma=parseInt(n)+suma;
-        }
-}while(n!=null);
+    const btn = document.getElementById('btn-exchange');
+    let btnWidth = btn.getBoundingClientRect().width;
+    let btnHeight = btn.getBoundingClientRect().height;
+  
+    let docWidth = document.body.getBoundingClientRect().width;
+    let docHeight = document.body.getBoundingClientRect().height;
+    
+    for(let i=0;i<2000;i++){
+        let left = (Math.random() * (docWidth - btnWidth)).toFixed();
+        let top = (Math.random() * (btnHeight - docHeight)).toFixed();
+        let numero=(Math.random() * ())
+        document.write(`<div style="background-color:rgb(${red},${green},${blue}) left:${left}px top:${top}px">`+`</div>`);
 
-document.write(`<p>`+`${suma}`+`</p>`);
-document.write(`<p>`+`${lista}`+`</p>`);
-
+    }
    
     </script>
 </body>

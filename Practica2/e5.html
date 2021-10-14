@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse:collapse;
+            margin:0;
+            width:100%;
+        }
+        td{
+            border:solid black 3px;
+            text-align: center;
+        }
+        td:nth-child(odd){
+            background-color: gray;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <script>   
+    
+    
+    for(let i=0;i<2000;i++){
+        
+        
+        function random(){
+            return Math.random()*(256-0)+0;
+        }
+        let left = parseInt(Math.random()*(1920-0)+0); 
+        let top = parseInt(Math.random()*(1080-0)+0);
+        let red= parseInt(random());
+        let blue= parseInt(random());
+        let green=parseInt(random());
+        document.write(`<div style="position:absolute; background-color:rgb(${red},${green},${blue}); left:${left}px; top:${top}px; height:50px; width:50px">`+`</div>`);
+
+    }
+   
+    </script>
+</body>
+</html>
+}

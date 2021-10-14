@@ -23,20 +23,46 @@
 </head>
 <body>
     <script>   
-    const btn = document.getElementById('btn-exchange');
-    let btnWidth = btn.getBoundingClientRect().width;
-    let btnHeight = btn.getBoundingClientRect().height;
-  
-    let docWidth = document.body.getBoundingClientRect().width;
-    let docHeight = document.body.getBoundingClientRect().height;
-    
-    for(let i=0;i<2000;i++){
-        let left = (Math.random() * (docWidth - btnWidth)).toFixed();
-        let top = (Math.random() * (btnHeight - docHeight)).toFixed();
-        let numero=(Math.random() * ())
-        document.write(`<div style="background-color:rgb(${red},${green},${blue}) left:${left}px top:${top}px">`+`</div>`);
+     let numero=prompt("Introduce numero de asteriscos");
+        document.write("<h2>Triangulo 1</h2>");
+        for(let i=0;i<parseInt(numero);i++){
+            for(let x=0;x<=i;x++){
+                document.write("* ");
+            }
+            document.write(`</br>`);
+        }
 
-    }
+        document.write("<h2>Triangulo 2</h2>");
+
+        for(let i =numero;i>0;i--){
+            for(let j=0;j<i;j++){
+                document.write("* ");
+            }
+            document.write("</br>");
+        }
+
+        document.write("<h2>Triangulo 3</h2>");
+
+        for(let i =1;i<=numero;i++){
+            for(j=1;j<=numero-i;j++){
+                document.write("&nbsp;");
+            }
+            for(let j=1;j<=i;j++){
+                document.write("* ");
+            }
+            document.write("</br>");
+        }
+
+        document.write("<h2>Triangulo 4</h2>");
+        for(let i =numero;i>0;i--){
+            for(let x=1;x<=numero-i;x++){
+                document.write("&nbsp;");
+            }
+            for(let j=0;j<i;j++){
+                document.write("* ");
+            }
+            document.write("</br>");
+        }
    
     </script>
 </body>

@@ -1,5 +1,5 @@
-function random(){
-    return Math.random()*(10-1)+1;
+    function random(){
+        return Math.random()*(10-1)+1;
     }
     let aleatorio=Math.trunc(random());
     let n;

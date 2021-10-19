@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        table{
-            border-collapse:collapse;
-            margin:0;
-            width:100%;
+        table {
+            border-collapse: collapse;
+            margin: 0;
+            width: 100%;
         }
-        td{
-            border:solid black 3px;
+
+        td {
+            border: solid black 3px;
             text-align: center;
         }
-        td:nth-child(odd){
+
+        td:nth-child(odd) {
             background-color: gray;
-            color:white;
+            color: white;
         }
     </style>
 </head>
+
 <body>
-    <script>   
-    
-    
-    let numero=0;
-    document.write(`<table>`);
-    for(let i=0;i<1000;i++){
-     document.write(`<tr>`);
-    for(let u=0;u<10;u++){
-        var unicode="&#";
-        numero=numero+1;
-        document.write(`<td>`+ `${numero}` +`</td>`);
-        unicode=unicode+numero;
-        document.write(`<td>`+ `${unicode}` +`</td>`);
-    }
-        document.write(`</tr>`);
-    }
-document.write(`</table>`);
-   
+    <script>
+
+
+        let numero = 0;
+        document.write(`<table>`);
+        for (let i = 0; i < 1000; i++) {
+            document.write(`<tr>`);
+            for (let u = 0; u < 10; u++) {
+                var unicode = "&#";
+                numero = numero + 1;
+                document.write(`<td>` + `${numero}` + `</td>`);
+                unicode = unicode + numero;
+                document.write(`<td>` + `${unicode}` + `</td>`);
+            }
+            document.write(`</tr>`);
+        }
+        document.write(`</table>`);
+
     </script>
 </body>
+
 </html>

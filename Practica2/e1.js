@@ -12,7 +12,7 @@ for (let i = 1; i <= 5 && acierto == false; i++) {
 
         if (n == aleatorio) {
             acierto = true;
-            alert("CORRECTO, Nº de intentos necesarios " + i);
+            alert(`CORRECTO, Nº de intentos necesarios ${i}`);
         }
         else {
             if (i != 5) {

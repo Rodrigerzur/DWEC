@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e1</title>
+</head>
+<body>
+    <script>
+        var palabra=[];
+        do{
+            var entrada=prompt("Introduce una palabra");
+            if(entrada!=null){
+                palabra.push(entrada);
+            }
+        }while(entrada!=null);
+        let menu;
+        menu=prompt("1)Ver primera palabra insertada\n 2)Ver última palabra insertada\n 3)Ver todas las palabras\n 4)Ver la palabra más larga\n 5)Ver la palabra más corta\n 6)Número de palabras insertadas\n 7)Buscar una palabra\n 8)Borrar duplicados\n 9)Salir");
+        for(var valor of menu) {
+            switch(valor){
+                case '1':console.log(palabra.at(0));
+                break;
+                case '2':console.log(palabra.at(-1));
+                break;
+                case '3':console.log(palabra);
+                break;
+                case '4':console.log;
+                break;
+                case '5':;
+                break;
+                case '6':console.log(palabra.length);
+                break;
+                case '7':var buscar=prompt("Palabra a buscar");
+                console.log(palabra.includes(buscar));
+                break;
+                case '8':;
+                break;
+                case '9':;
+                break;
+                default: console.log("Opcion incorrecta");
+                break;
+            }
+        };
+    </script>
+</body>
+</html>

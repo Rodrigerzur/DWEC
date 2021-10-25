@@ -47,4 +47,4 @@ document.write(`<p>` + `${lista}` + `</p>`);
 document.write(`<p>` + `La nota media final de todos los alumnos es ` + `(${media / numeroAlumnos})` + `</p>`);
 document.write(`<p>` + `La nota media en la parte practica de todos los alumnos es ` + `(${parseInt(mediaPrac) / parseInt(numeroAlumnos)})` + `</p>`);
 document.write(`<p>` + `La nota media en la parte teorica de todos los alumnos es ` + `(${parseInt(mediaTeo) / parseInt(numeroAlumnos)})` + `</p>`);
-document.write(`<p>` + `La nota media en cuanto a actitud de todos los alumnos es ` + `(${parseInt(mediaAct) / parseInt(numeroAlumnos)})` + `</p>`);
+document.write(`<p>La nota media en cuanto a actitud de todos los alumnos es (${parseInt(mediaAct) / parseInt(numeroAlumnos)})</p>`);

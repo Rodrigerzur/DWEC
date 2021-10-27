@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e2</title>
+    <style>
+        body{
+            background-color:rgba(42, 85, 14, 0.253);
+        }
+        table{
+            width:70%;
+            height:80vh;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top:5%;
+            border: 5px solid brown;
+            border-collapse:separate;
+            table-layout: fixed;
+        }
+        td{
+            background-color:blue;
+            width:1vw;
+            height:1vh;
+            font-weight: bold;
+            font-family: sans-serif;
+            font-size: 1em;
+            text-transform: capitalize;
+            
+        }
+        div{
+            width: 80%;
+            height :80%;
+            background-color: grey;
+            margin: auto;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        VAR_TAM_PORTAAVIONES = 4;
+        VAR_TAM_ACORAZADO = 3;
+        VAR_TAM_DESTRUCTOR = 2;
+        VAR_TAM_FRAGATA = 1;
+
+        VAR_CANT_PORTAAVIONES = 2;
+        VAR_CANT_ACORAZADO = 3;
+        VAR_CANT_DESTRUCTOR = 3;
+        VAR_CANT_FRAGATA = 2;
+
+        let vertical = false;
+
+
+        
+        document.write('<table>');
+        for(let i=0;i<=10;i++){
+            document.write('<tr>');
+            for(let x=0;x<=10;x++){
+                if(i==0){
+                    if(x==0){
+                        document.write("<td style='background-color:red'>X/Y</td>");
+                        }
+                    else{
+                        document.write("<td style='background-color:green'>"+x+"</td>");
+                    }
+                }
+                else if(x==0 && i!=0){
+                    document.write("<td style='background-color:rgb(21, 94, 43)'>"+String.fromCharCode(96 + i)+"</td>");
+                }
+                
+                else
+                    if(x==5){
+                        document.write('<td><div class="barco"></div></td>');
+                    }
+                    else {
+                        document.write('<td></td>');
+                    }
+                }
+            
+         document.write('</tr>');
+        }
+        document.write('</table>');
+    </script>
+</body> 
+</html>

@@ -1,47 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e1</title>
 </head>
+
 <body>
     <script>
-        var palabra=[];
-        do{
-            var entrada=prompt("Introduce una palabra");
-            if(entrada!=null){
+        var palabra = [];
+        do {
+            var entrada = prompt("Introduce una palabra");
+            if (entrada != null) {
                 palabra.push(entrada);
             }
-        }while(entrada!=null);
-        let menu;
-        menu=prompt("1)Ver primera palabra insertada\n 2)Ver última palabra insertada\n 3)Ver todas las palabras\n 4)Ver la palabra más larga\n 5)Ver la palabra más corta\n 6)Número de palabras insertadas\n 7)Buscar una palabra\n 8)Borrar duplicados\n 9)Salir");
-        for(var valor of menu) {
-            switch(valor){
-                case '1':console.log(palabra.at(0));
-                break;
-                case '2':console.log(palabra.at(-1));
-                break;
-                case '3':console.log(palabra);
-                break;
-                case '4':console.log;
-                break;
-                case '5':;
-                break;
-                case '6':console.log(palabra.length);
-                break;
-                case '7':var buscar=prompt("Palabra a buscar");
-                console.log(palabra.includes(buscar));
-                break;
-                case '8':;
-                break;
-                case '9':;
-                break;
-                default: console.log("Opcion incorrecta");
-                break;
+        } while (entrada != null);
+
+
+        let salir = false;
+        do {  
+            let menu = prompt("1)Ver primera palabra insertada\n 2)Ver última palabra insertada\n 3)Ver todas las palabras\n 4)Ver la palabra más larga\n 5)Ver la palabra más corta\n 6)Número de palabras insertadas\n 7)Buscar una palabra\n 8)Borrar duplicados\n 9)Salir");
+            switch (menu) {
+                case '1':
+                    document.write(palabra.at(0) +"  Es la primera palabra en el array<br>");
+                    break;
+                case '2':
+                    document.write(palabra.at(-1) + " Es la ultima palabra en el array <br>");
+                    break;
+                case '3':
+                    document.write(palabra + "<br>");
+                    break;
+                case '4': var larga = palabra.reduce(
+                    function (a, b) {
+                        return a.length > b.length ? a : b;
+                    }
+                )
+                    document.write("La palabra mas larga es " + larga + "<br>");
+                    ;
+                    break;
+                case '5': var lgth = 0;
+                    let corta = palabra[0];
+                    for (let pal of palabra) {
+                        if (pal.length < corta.length) {
+                            corta = pal;
+                        }
+                    }
+                    document.write("La palabra mas corta es " + corta + "<br>");
+                    break;
+                case '6': 
+                document.write("Has introducido "+palabra.length+" palabras <br>");
+                    break;
+                case '7': var buscar = prompt("Palabra a buscar");
+                    if (palabra.includes(buscar)) {
+                        document.write("La palabra introducida se encuentra en el array");
+                    }
+                    else {
+                        document.write("La palabra introducida NO se encuentra en el array");
+                    }
+                    break;
+                case '8': var aux = new Array();
+                    for (let pal of palabras) {
+                        let duplicado = false;
+                        for (let palaux of pal) {
+                            if (palaux == pal)
+                                duplicado = true;
+                        }
+                        if (!duplicado) {
+                            aux.push(pal);
+                        }
+                    }
+                    palabra = aux;
+                    document.write("Elementos duplicados borrados. Contenido del array : " + palabra + "<br>");
+                    break;
+                case '9':
+                    salir = true;
+                    alert("Adios")
+                    break;
+                default: alert("Opcion incorrecta");
+                    break;
+
             }
-        };
+        }while (!salir);
+
     </script>
 </body>
+
 </html>

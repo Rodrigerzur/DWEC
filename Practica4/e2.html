@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let array1 = [];
+        let mapa = new Map();
+
+
+        function mapear(a) {
+            let map1 = new Map();
+            if (a instanceof Array) {
+                for (variable of a) {
+                    if (map1.get(variable) != undefined) {
+                        map1.set(variable, map1.get(variable) + 1);
+                    }
+                    else {
+                        map1.set(variable, 1);
+                    }
+                }
+            } else {
+                alert("No es un array");
+            }
+            return map1;
+
+        }
+
+        do {
+            var entrada = prompt("Introduce una palabra");
+            if (entrada != null) {
+                array1.push(entrada);
+            }
+        } while (entrada != null);
+
+        mapa = mapear(array1);
+
+        let clave;
+        let cont;
+        for ([clave, cont] of mapa) {
+            document.write(`${clave},${cont}`);
+            document.write('<br>');
+        }
+
+    </script>
+</body>
+
+</html>

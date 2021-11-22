@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var texto = prompt("Introduce un texto");
+        texto.toLocaleLowerCase;
+
+        var desired = texto.replace(/[`~!@#$%^&*·()_|+\-=?;:'",.<> \{\}\[\]\\\/]/gi, '');
+
+        var x = true;
+
+        var textoR = desired;
+        do {
+            textoR=desired;
+            desired=desired.replace("á", "a");
+            desired=desired.replace("é", "e");
+            desired=desired.replace("í", "i");
+            desired=desired.replace("ó", "o");
+            desired=desired.replace("ú", "u");
+        } while (desired != textoR);
+
+        alert(desired);
+
+        for (let i = 0; i < (desired.length / 2) && x; i++) {
+            if (desired.charAt(i) == desired.charAt(desired.length - i - 1)) {
+                x = true;
+            }
+
+            else {
+                x = false;
+            }
+        }
+
+        if (x) {
+            alert("PALINDROMA");
+        } else {
+            alert("NO PALINDROMA");
+        }
+    </script>
+</body>
+
+</html>

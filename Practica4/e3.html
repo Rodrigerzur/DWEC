@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgba(42, 85, 14, 0.253);
+        }
+
+        table {
+            width: 70%;
+            height: 80vh;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 5%;
+            border: 5px solid black;
+            border-collapse: separate;  
+            table-layout: fixed;
+        }
+
+        td {
+            background-color: gray;
+            width: 1vw;
+            height: 1vh;
+            font-weight: bold;
+            font-family: sans-serif;
+            font-size: 1em;
+            text-transform: capitalize;
+            border: 1px solid #ccc;
+        }
+        .mina{
+            background-color: red;
+            color:black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        document.write('<table>');
+        for (let i = 0; i <= 9; i++) {
+            document.write('<tr>');
+            for (let x = 0; x <= 9; x++) {
+                document.write('<td></td>');
+            }
+            document.write('</tr>');
+        }
+        document.write('</table>');
+
+
+
+        function plantarminas(){     
+            let contadorminas=0;
+            document.write('<table>');
+        for (let i = 0; i <= 9; i++) {
+            document.write('<tr>');
+            for (let x = 0; x <= 9; x++) {
+                
+                if(Math.random() < 0.5 && contadorminas<40){
+                    document.write('<td class="mina">MINA</td>');
+                    contadorminas++;
+                }else{    
+                document.write('<td></td>');
+                }
+            }
+            document.write('</tr>');
+        }
+        document.write('</table>');
+        }
+
+        plantarminas();
+    </script>
+</body>
+
+</html>

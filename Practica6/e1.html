@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        fecha = prompt("Introduce tu fecha de nacimiento con el siguiente formato\n \"AAAA-MM-DD\" ");
+        var fechaJS = new Date(fecha);
+
+        console.log(fechaJS);
+
+        switch (fechaJS.getDay()) {
+            case 0: alert("DOMINGO");
+                break;
+            case 1: alert("LUNES");
+                break;
+            case 2: alert("MARTES");
+                break;
+            case 3: alert("MIERCOLES");
+                break;
+            case 4: alert("JUEVES");
+                break;
+            case 5: alert("VIERNES");
+                break;
+            case 6: alert("SABADO");
+                break;
+        }
+        for (let i = fechaJS.getFullYear(); i < 2021; i++) {
+            function add_years(dt, n) {
+                return new Date(dt.setFullYear(dt.getFullYear() + (n-dt.getFullYear()+1)));
+            }
+            switch (add_years(fechaJS,i).getDay()) {
+                case 0: alert("En el año "+ add_years(fechaJS,i).getFullYear()+" mi cumpleaños fue DOMINGO");
+                    break;
+                case 1: alert("En el año "+ add_years(fechaJS,i).getFullYear()+" mi cumpleaños fue LUNES");
+                    break;
+                case 2: alert("En el año "+ add_years(fechaJS,i).getFullYear()+" mi cumpleaños fue MARTES");
+                    break;
+                case 3: alert("En el año "+ add_years(fechaJS,i).getFullYear()+" mi cumpleaños fue MIERCOLES");
+                    break;
+                case 4: alert("En el año "+ add_years(fechaJS,i).getFullYear()+" mi cumpleaños fue JUEVES");
+                    break;
+                case 5: alert("En el año "+ add_years(fechaJS,i).getFullYear()+" mi cumpleaños fue VIERNES");
+                    break;
+                case 6: alert("En el año "+ add_years(fechaJS,i).getFullYear()+" mi cumpleaños fue SABADO");
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

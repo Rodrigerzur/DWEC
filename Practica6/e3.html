@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            table-layout: fixed;
+            height: 100%;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        tr{
+            height: 50px;
+        }
+        td{
+            width: 10%;
+            padding:5px;
+            height: 30px;
+        }
+        .dia{
+            border:1px solid black;
+            
+            
+           
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let mes = prompt("Introduce un mes");
+        let anyo = prompt("Introduce un año");
+        contador = 0;
+
+        var aDiaSem = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
+
+
+        document.write('<table>');
+        for (let i = 0; i <= parseInt(6); i++) {
+            document.write('<tr>');
+            for (let x = 0; x <= 6; x++) {
+
+                if (i==0 && x == 0) {
+                    document.write("<td style='background-color:red'>AA</td>");
+                }
+                else if (i == 0) {
+                    document.write("<td style='background-color:red'>" + aDiaSem[x] + "</td>");
+                }
+
+                else if (i!=0 && x == 0) {
+                    document.write("<td style='background-color:rgb(21, 94, 43)'> Semana " + i + "</td>");
+                }
+
+                else {
+                    contador++;
+                    document.write('<td class="dia">' + (contador) + '</td>');
+                }
+            }
+
+            document.write('</tr>');
+        }
+        document.write('</table>');
+    </script>
+</body>
+
+</html>

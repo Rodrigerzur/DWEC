@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function fib(a) {
+            let array = [];
+            for (let i = 0; i <= a; i++) {
+                if (i == 0) {
+                    array[i] = 0;
+                } else {
+                    if (i == 1) {
+                        array[i] = 1;
+                    } else {
+                        array[i] = array[i - 1] + array[i - 2];
+                    }
+                }
+
+            }
+            document.write(array[a]);
+        }
+        let n = prompt("Introduce el numero de elementos que contendra la sucesion de Fibonacci");
+        fib(n);
+
+        document.write('<br>');
+
+        function fib2(a){
+            if(a==0){
+                return 0;
+            }
+            else if(a==1){
+                return 1;
+            }
+            else{
+                return fib2(a-1)+fib2(a-2);
+            }
+        }
+        
+        let x = prompt("Introduce el numero de elementos que contendra la sucesion de Fibonacci");
+        document.write(fib2(x));
+
+    </script>
+</body>
+
+</html>

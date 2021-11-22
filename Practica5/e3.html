@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let array1 = [];
+        do {
+            var texto = prompt("Introduce palabras");
+            if (texto != null) {
+                texto.toLocaleLowerCase;
+                texto = texto.replace(/[`~!@#$%^&*·()_|+\-=?;:'",.<> \{\}\[\]\\\/]/gi, '');
+                var textoR = texto;
+                do {
+                    textoR = texto;
+                    texto = texto.replace("á", "a");
+                    texto = texto.replace("é", "e");
+                    texto = texto.replace("í", "i");
+                    texto = texto.replace("ó", "o");
+                    texto = texto.replace("ú", "u");
+                } while (texto != textoR);
+                array1.push(texto);
+            }
+        } while (texto != null);
+
+
+        let array2 = [];
+        array1.forEach(element => array2.push(element.split("").sort().join("")));
+        
+
+        var x=true;
+
+        for (let i = 0; i < (array2.length -1) && x; i++) {
+            if (array2[i] == array2[i+1]) {
+                x = true;
+            }
+
+            else {
+                x = false;
+            }
+        }
+
+        if (x) {
+            alert("Son anagramas");
+        } else {
+            alert("NO son anagramas");
+        }
+    </script>
+</body>
+
+</html>

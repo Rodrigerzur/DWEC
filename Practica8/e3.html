@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        Math.mcd = (a, b) => {
+            if (a % b == 0) {
+                return b;
+            }else{
+                return Math.mcd(b,a % b);
+            }
+        }
+        Math.mcm = (a, b) => {
+            return (a * b) / Math.mcd(a, b);
+        }
+
+        class Fraccion {
+            #numerador;
+            #denominador;
+            constructor(numerador, denominador) {
+                this.numerador = numerador;
+                this.denominador = denominador;
+            }
+            getNumerador(){
+                return this.#numerador;
+            }
+            getDenominador(){
+                return this.#denominador;
+            }
+            setNumerador(nuevoNumerador){
+                this.#numerador=nuevoNumerador;
+            }
+            setDenominador(nuevoDenominador){
+                this.#denominador=nuevoDenominador;
+            }
+            cambiarFraccion(valor1,valor2){
+                this.#numerador=valor1;
+                this.#denominador=valor2;
+            }
+            toString(){
+                return this.#numerador+ "/" + this.#denominador;
+            }
+            simplificar(){
+                var mcd1 = Math.mcd(this.#numerador,this.#denominador);
+                this.#numerador=this.#numerador/mcd1;
+                this.#denominador=this.#denominador/mcd1;
+                
+            }
+            suma(fraccionSumar){
+                var mcmDenominador = Math.mcm(this.#denominador,fraccionSumar.getDenominador());
+                var numerador1=(mcmDenominador/this.#denominador)*this.#numerador;
+                var numerador2=(mcmDenominador/fraccionSumar.getDenominador())* fraccionSumar.getNumerador();
+                var numeradorFinal = numerador1 +numerador2;
+                var resultado = new Fraccion(numeradorFinal,mcmDenominador);
+                resultado.simplificar();
+                return resultado;
+            }
+            resta(fraccionRestar){
+                var mcmDenominador = Math.mcm(this.#denominador,fraccionRestar.getDenominador());
+                var numerador1=(mcmDenominador/this.#denominador)*this.#numerador;
+                var numerador2=(mcmDenominador/fraccionRestar.getDenominador())* fraccionRestar.getNumerador();
+                var numeradorFinal = numerador1 -numerador2;
+                var resultado= new Fraccion(numeradorFinal,mcmDenominador);
+                resultado.simplificar();
+                return resultado;
+            }
+            multiplicacion(fraccionMultiplicar){
+                let numeradorNuevo=this.#numerador * fraccionMultiplicar.getNumerador();
+                let denominadorNuevo=this.#denominador * fraccionMultiplicar.getDenominador();
+                return new Fraccion(numeradorNuevo,denominadorNuevo).simplificar();
+            }
+            division(fraccionDividir){
+                let numeradorNuevo=this.#numerador * fraccionDividir.getNumerador();
+                let denominadorNuevo=this.#denominador * fraccionDividir.getDenominador();
+                return new Fraccion(numeradorNuevo,denominadorNuevo).simplificar();
+            }
+        }
+        const f1 = new Fraccion(1,5);
+        const f2 = new Fraccion(2,6);
+
+        f1.cambiarFraccion(4,4);
+        alert(f1.toString());
+        alert((f1.suma(f2)).toString());
+        alert((f1.resta(f2)).toString());
+        alert((f1.multiplicacion(f2)).toString());
+        alert((f1.division(f2)).toString());
+    </script>
+</body>
+
+</html>

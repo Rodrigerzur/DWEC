@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Array.prototype.media=function(){
+            let acumulador=0;
+            for(i=0;i<this.length;i++){
+                acumulador=acumulador+parseInt(this[i]);
+            }
+            return alert("La media de todo el array es "+(acumulador/parseInt(this.length)));
+        }
+
+        let prueba = [1,2,3,8,8,8];
+        prueba.media();
+    </script>
+</body>
+</html>

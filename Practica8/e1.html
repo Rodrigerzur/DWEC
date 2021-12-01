@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        class punto {
+            constructor() {
+                this.x = prompt("Introduce la coordenada x del punto");
+                this.y = prompt("Introduce la coordenada y del punto");
+            }
+            cambiar() {
+                this.x = prompt("Introduce nueva coordenada x");
+                this.y = prompt("Introduce nueva coordenada y");
+
+            }
+            copia() {
+                const puntoCopia = punto1;
+                return alert(JSON.stringify(puntoCopia));
+            }
+            iguales(punto2) {
+                if (JSON.stringify(punto1) === JSON.stringify(punto2)) {
+                    return alert("Los objetos SON iguales");
+                } else return alert("Los objetos NO SON iguales");
+            }
+            suma(punto2) {
+                const objSuma = {
+                    x: parseInt(punto1.x) + parseInt(punto2.x),
+                    y: parseInt(punto1.y) + parseInt(punto2.y)
+                }
+                return alert("El resultado de la suma seria " + JSON.stringify(objSuma));
+            }
+            obtenerDistancia() {
+                let distancia = Math.sqrt(((Math.pow(punto2.x - punto1.x),2) + Math.pow(punto2.y - punto1.y),2));
+                return alert("La distancia de punto a punto es "+distancia);
+
+            }
+            toString() {
+                return JSON.stringify(punto1);
+            }
+        }
+        var punto1 = new punto();
+        var punto2 = new punto();
+
+        do {
+            var entrada;
+            var x = false;
+            var opcion = parseInt(prompt("Introduce la opcion: \n·1:Cambiar\n·2:Copiar\n·3:Comparar\n·4:Sumar\n·5:Obtener Distancia\n·6:Mostrar\n·0:Salir"));
+            switch (opcion) {
+                case 1:
+                    entrada = prompt("Introduce un objeto punto: 1 o 2");
+                    if (entrada == 1) {
+                        punto1.cambiar();
+                        alert("Nuevas coordenadas = " + JSON.stringify(punto1));
+                    } else {
+                        punto2.cambiar();
+                        alert("Nuevas coordenadas = " + JSON.stringify(punto2));
+                    }
+                    break;
+                case 2:
+
+                    punto1.copia();
+                    break
+                case 3:
+
+                    punto1.iguales(punto2);
+                    break;
+                case 4:
+
+                    suma(entrada, entrada2);
+                    break;
+                case 5:
+
+                    punto1.obtenerDistancia(punto2);
+                    break;
+                case 6:
+
+                    punto1.toString();
+                    break;
+                case 0:
+                    x = true;
+                    break;
+                default:
+                    x = true;
+                    break;
+
+            }
+        } while (x == false);
+
+    </script>
+</body>
+
+</html>

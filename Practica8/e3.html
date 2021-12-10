@@ -25,8 +25,8 @@
             #numerador;
             #denominador;
             constructor(numerador, denominador) {
-                this.numerador = numerador;
-                this.denominador = denominador;
+                this.#numerador = numerador;
+                this.#denominador = denominador;
             }
             getNumerador(){
                 return this.#numerador;
@@ -74,23 +74,30 @@
             multiplicacion(fraccionMultiplicar){
                 let numeradorNuevo=this.#numerador * fraccionMultiplicar.getNumerador();
                 let denominadorNuevo=this.#denominador * fraccionMultiplicar.getDenominador();
-                return new Fraccion(numeradorNuevo,denominadorNuevo).simplificar();
+                var resultado= new Fraccion(numeradorNuevo,denominadorNuevo);
+                resultado.simplificar();
+                return resultado;
             }
             division(fraccionDividir){
-                let numeradorNuevo=this.#numerador * fraccionDividir.getNumerador();
-                let denominadorNuevo=this.#denominador * fraccionDividir.getDenominador();
-                return new Fraccion(numeradorNuevo,denominadorNuevo).simplificar();
+                let numeradorNuevo=this.#numerador * fraccionDividir.getDenominador();
+                let denominadorNuevo=this.#denominador * fraccionDividir.getNumerador();
+                var resultado= new Fraccion(numeradorNuevo,denominadorNuevo);
+                resultado.simplificar();
+                return resultado;
             }
         }
         const f1 = new Fraccion(1,5);
         const f2 = new Fraccion(2,6);
 
-        f1.cambiarFraccion(4,4);
-        alert(f1.toString());
-        alert((f1.suma(f2)).toString());
-        alert((f1.resta(f2)).toString());
-        alert((f1.multiplicacion(f2)).toString());
-        alert((f1.division(f2)).toString());
+        f1.cambiarFraccion(4,12);
+        f1.simplificar();
+        f2.simplificar();
+        alert("Fraccion 1 = "+f1.toString());
+        alert("Fraccion 2 = "+f2.toString());
+        alert("Suma = "+(f1.suma(f2)).toString());
+        alert("Resta = "+(f1.resta(f2)).toString());
+        alert("Multiplicacion = "+(f1.multiplicacion(f2)).toString());
+        alert("Division = " +(f1.division(f2)).toString());
     </script>
 </body>
 

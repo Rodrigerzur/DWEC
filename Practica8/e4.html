@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Carta {
+
+            constructor(palo, valor) {
+                this.palo = palo;
+                this.valor = valor;
+            }
+            getPalo() {
+                return this.palo;
+            }
+            getValor() {
+                return this.valor;
+            }
+            darValor(palo, valor) {
+                this.valor = valor;
+            }
+            toString() {
+                var paloString = "";
+                var valorString = "";
+                switch (this.palo) {
+                    case 1: paloString = "Oros";
+                        break;
+                    case 2: paloString = "Copas";
+                        break;
+                    case 3: paloString = "Espadas";
+                        break;
+                    case 4: paloString = "Bastos";
+                        break;
+                }
+                switch (this.valor) {
+                    case 1: valorString = "As";
+                        break;
+                    case 2: valorString = "Dos";
+                        break;
+                    case 3: valorString = "Tres";
+                        break;
+                    case 4: valorString = "Cuatro";
+                        break;
+                    case 5: valorString = "Cinco";
+                        break;
+                    case 6: valorString = "Seis";
+                        break;
+                    case 7: valorString = "Siete";
+                        break;
+                    case 8: valorString = "Sota";
+                        break;
+                    case 9: valorString = "Caballo";
+                        break;
+                    case 10: valorString = "Rey";
+                        break;
+                }
+
+                return valorString + " de " + paloString + ".";
+            }
+
+        }
+        class Baraja {
+            constructor() {
+                this.cartas = [];
+                for (let palo = 1; palo < 5; palo++) {
+                    for (let valor = 1; valor < 11; valor++) {
+                        this.cartas.push(new Carta(palo, valor));
+                    }
+                }
+            }
+            barajar() {
+                for (let i = this.cartas.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [this.cartas[i], this.cartas[j]] = [this.cartas[j], this.cartas[i]];
+                }
+            }
+            toString() {
+                return this.cartas.toString();
+            }
+
+        }
+
+        const baraja1 = new Baraja();
+        baraja1.barajar();
+        console.log(baraja1);
+        console.log(baraja1.toString());
+        const carta1 = new Carta(1, 8);
+        alert(carta1.getPalo());
+        alert(carta1.getValor());
+        alert(carta1.toString());
+    </script>
+</body>
+
+</html>

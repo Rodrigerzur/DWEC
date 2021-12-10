@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Ordenador{
+            constructor(Marca,Modelo,Ram=4,Hdd=512,ScreenSize=17){
+                this.Marca=Marca;
+                this.Modelo=Modelo;
+                this.Ram=Ram;
+                this.Hdd=Hdd;
+                this.ScreenSize=ScreenSize;
+            }
+
+            toString(){
+                return JSON.stringify(this);
+            }
+
+        }
+
+        const Pc1 = new Ordenador("msi", "ms2", 16, 2, 27);
+        alert(Pc1.toString());
+
+        class Portatil extends Ordenador{
+            constructor(Marca,Modelo,Ram,Hdd=256,ScreenSize=12,Bateria=4){
+                super(Marca,Modelo,Ram,Hdd,ScreenSize);
+                this.Bateria=Bateria;
+            }
+
+            toString(){
+                return JSON.stringify(this);
+            }
+        }
+
+        const Laptop1 = new Portatil("msi", "ms2Lite", 16, 1 ,17, 50);
+        alert(Laptop1.toString());
+    </script>
+</body>
+</html>

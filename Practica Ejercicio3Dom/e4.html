@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: white;
+        }
+        #div1 {
+            border:10px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+        window.addEventListener("load", reloj);
+        function reloj() {
+            var lista = document.getElementById("div1");
+            lista.innerHTML = "";
+            var fechaActual = new Date();
+            var hora = fechaActual.getHours();
+            var minuto = fechaActual.getMinutes();
+            var segundo = fechaActual.getSeconds();
+            var primerahora = parseInt(hora / 10);
+            var segundahora = parseInt(hora % 10);
+            var primeraminuto = parseInt(minuto / 10);
+            var segundaminuto = parseInt(minuto % 10);
+            var primerasegundo = parseInt(segundo / 10);
+            var segundasegundo = parseInt(segundo % 10);
+            var dospuntos = "dospuntos";
+            var mostrarHora = crearImagen(primerahora) + crearImagen(segundahora) + crearImagen(dospuntos) + crearImagen(primeraminuto) + crearImagen(segundaminuto) + crearImagen(dospuntos) + crearImagen(primerasegundo) + crearImagen(segundasegundo);
+            var lista = document.getElementById("div1");
+            var nuevoElemento = document.createElement("div");
+        }
+        setInterval("reloj()", 1000);
+        function crearImagen(numero) {
+            var img = document.createElement("img");
+            img.setAttribute("src", `${numero}.png`);
+            img.width = "170";
+            img.height = "170";
+            img.alt = `${numero}`;
+            var src = document.getElementById("div1");
+            src.appendChild(img);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.addEventListener("load",inicio);
+
+        function inicio(){
+            document.getElementById("cambiarTextos").addEventListener("click",cambiarTextos);
+            document.getElementById("cambiarClases").addEventListener("click",cambiarClases);
+            document.getElementById("quitarClases").addEventListener("click",quitarClases);
+        }
+
+        var a = document.getElementsByTagName('p');
+        function cambiarTextos(s) {
+            a[0].textContent="El primer parrafo ha cambiado";
+            a[1].innerHTML="El segundo parrafo ha cambiado";
+            a[2].textContent="El tercer parrafo ha cambiado";
+        }
+
+        function cambiarClases() {
+            a[0].className="miClase";
+            a[1].setAttribute("class", "miClase");
+        }
+
+        function quitarClases(){
+            for(let i=0;i<a.length;i++){
+                a[i].className="";
+            }
+        }
+    </script>
+</body>
+</html>

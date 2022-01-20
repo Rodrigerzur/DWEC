@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var array_palabras=["uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve","diez"]
+        var contador=0;
+
+        var ejecutar= setInterval(mostrarPalabras, 1000);
+            
+        function mostrarPalabras(){
+            let ul=document.getElementById("palabras");
+            let nuevoLi = document.createElement[contador];
+            contador++;
+            ul.appendChild(nuevoLi);
+            if(contador==array_palabras.length){
+                clearInterval(ejecutar);
+                setTimeout(ordenarPalabras, 3000);
+            }
+        }
+
+        function ordenarPalabras() {
+            let pregunta =confirm("¿Quieres ordenarlas alfabeticamente?");
+            if(pregunta){
+                let ordenado=array_palabras.sort();
+                let ul= document.getElementById("palabras");
+                ul.innerHTML=" ";
+                for(let texto of array_palabras){
+                    let nuevoLi=document.createElement("li");
+                    nuevoLi.innerHTML=texto;
+                    ul.appendChild(nuevoLi);
+                }
+            }
+        }
+    </script>
+    <ul id="palabras"></ul>
+</body>
+</html>

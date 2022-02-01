@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            margin:auto;
+            width:30vw;
+        }
+        fieldset{
+            border:2px solid black;
+            padding:10px;
+        }
+        .boton.onclick{
+
+        }
+        .textoincidencia{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="" alt="">
+        <form action="#">
+            <fieldset>
+                <label for="Incidencia">Tipo de incidencia:</label>
+                <select id="incidencia" name="incidencia">
+                    <option value="Distribucion">Distribucion</option>
+                    <option value="Oficina">Oficina</option>
+                    <option value="Produccion">Produccion</option>
+                </select>
+                <br><br>
+                <label for="nserie">Numero de serie:</label>
+                <input type="text" id="nserie" name="nserie" >
+                <br><br>
+                <button type="button" class="boton">Mostrar incidencia</button>
+                <br><br>
+                <textarea name="textoincidencia" class="textoincidencia" rows="10" cols="30">
+                    
+                </textarea>
+            </fieldset>
+        </form>
+    </div>
+    <script>
+        
+    </script>
+</body>
+
+</html>

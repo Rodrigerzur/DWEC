@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .capa {
+            width: 50vw;
+            height: 50vh;
+            border: 5px solid black;
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="capa">
+
+    </div>
+    <script>
+        var capa = document.getElementsByClassName("capa");
+
+        capa[0].addEventListener('mouseover', function (event) {
+            capa[0].style.background = 'green';
+        });
+        capa[0].addEventListener('mouseout', function (event) {
+            capa[0].style.background = '';
+        });
+        capa[0].addEventListener('mousedown',function(event){
+            if (event.which == 1){
+                capa[0].style.background='red';
+            }
+            else if (event.which == 3){
+                capa[0].style.background='blue';
+            }
+        });
+        capa[0].addEventListener('mouseup',function(event){
+            capa[0].style.background= 'green';
+        });
+        capa[0].addEventListener('contextmenu', function(event){
+            event.preventDefault();
+        });
+
+    </script>
+</body>
+
+</html>

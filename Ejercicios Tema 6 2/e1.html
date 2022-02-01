@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .arrastrar{
+            border:1px solid black;
+            background: yellow;
+            width:80px;
+            height:80px;
+            margin: auto;
+            text-align: center;
+            line-height: 80px;
+            
+        }
+        .meta{
+            border:1px solid black;
+            background: white;
+            width:80px;
+            height:80px;
+            text-align: center;
+            line-height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="arrastrar" draggable="true">
+        Arrastrame
+    </div>
+    <div class="meta">
+        Objetivo
+    </div>
+    <script>
+        document.addEventListener("dragover", function( event ) {
+      event.preventDefault();
+  }, false);
+    </script>
+</body>
+</html>

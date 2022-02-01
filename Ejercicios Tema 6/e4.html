@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 500px;
+            height: 500px;
+            text-align: center;
+            line-height: 500px;
+            border: 5px solid black;
+            font-weight: bold;
+            font-size: 2em;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        Velocidad = <strong id="p1">0</strong>
+    </div>
+
+    <script>
+        let strong= document.getElementById("p1");
+        let velocidad = 0;
+        document.body.addEventListener('keydown', function (event) {
+            
+            let strong= document.getElementById("p1");
+            
+                if( event.key=="ArrowDown" && velocidad>0){
+                strong.innerHTML=--velocidad;
+                }
+                else if(event.key=="ArrowUp" && velocidad<120){
+                strong.textContent=++velocidad;
+                }
+            
+        });
+
+
+    </script>
+</body>
+
+</html>

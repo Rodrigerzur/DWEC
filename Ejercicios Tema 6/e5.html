@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .capa {
+            margin: auto;
+            width: 50vw;
+            height: 50vh;
+            border: 5px solid black;
+            background: white;
+            overflow: scroll;
+            display:block;
+        }
+
+        .eliminar {
+            position: relative;
+            margin: auto;
+            margin-top: 15px;
+            width: 50vw;
+            height: 200px;
+            background: black;
+            color: white;
+            font-family: sans-serif;
+            font-size: 2em;
+            text-align: center;
+            line-height: 200px;
+            font-weight: bold;
+            display:none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="capa">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, at! Cum quos necessitatibus dolorum voluptate
+            dicta hic id nesciunt quae, voluptatibus error! Nulla quia velit unde officia illo saepe iure.</p>
+        <p>Perferendis nesciunt ut recusandae est ex asperiores, unde deserunt optio facilis officiis incidunt
+            dignissimos fuga error quas beatae inventore delectus culpa non reiciendis qui molestiae. Enim explicabo
+            architecto atque corporis!</p>
+        <p>Cum, dolores est laboriosam inventore velit corrupti quisquam officiis, autem, ut deserunt magnam enim
+            asperiores minus! Cupiditate velit, soluta, illum explicabo iste modi inventore hic facere qui labore,
+            excepturi sunt.</p>
+        <p>Ipsa consequatur reprehenderit obcaecati quos in possimus excepturi autem ratione. Omnis, consequatur ab quae
+            eos aliquid voluptas, quaerat temporibus obcaecati a neque repudiandae nesciunt totam voluptate iure amet
+            aspernatur necessitatibus?</p>
+        <p>Quasi quas numquam eaque corporis odit. Ullam, sapiente cupiditate mollitia asperiores, illum nesciunt fuga
+            earum sed voluptas perferendis vel voluptate aut vitae nisi itaque fugiat quam ipsam explicabo! Autem,
+            optio.</p>
+        <p>Voluptates quidem commodi fugit voluptas eveniet ad quod, corporis similique laboriosam facilis vel quia
+            consectetur. Perferendis non itaque quo minus, dicta eligendi, et eos accusantium laborum deserunt
+            distinctio repellendus totam.</p>
+        <p>Corporis aperiam itaque at, non quis nemo nam voluptas impedit molestias tenetur nesciunt reiciendis ut amet
+            accusantium laboriosam corrupti. Maiores voluptatibus hic facere eum corrupti consequuntur, commodi
+            consectetur quasi vel!</p>
+        <p>Et, pariatur voluptate. Et reiciendis sint praesentium tempora vero sunt beatae cumque delectus animi, ad
+            dolorem odio consequatur aliquam, alias maxime quia, repellat possimus facere eveniet fugit sequi! Facere,
+            eos.</p>
+        <p>Aut, nemo animi iusto dolore corrupti amet sequi eaque nostrum exercitationem unde voluptatem cumque qui nam
+            ratione nihil quasi, reiciendis a obcaecati asperiores! Unde laborum commodi vero, iure ipsa tempore?</p>
+        <p>Dolorem quas eius eligendi alias perferendis, dolores necessitatibus at enim animi dignissimos minus velit
+            facere ipsum distinctio rerum explicabo reiciendis tempora minima provident totam molestias maxime ex earum
+            itaque. Porro!</p>
+        <p>Laborum adipisci dolores quisquam perferendis quidem? Nulla hic illum facere, nesciunt pariatur vero
+            provident dicta itaque dolore fugiat, a qui voluptate ut quam, consectetur iusto beatae rem eaque doloremque
+            aliquam?</p>
+        <p>Molestias cum, possimus officia perspiciatis ipsum quibusdam nulla. Quibusdam repellat nulla ex quis, dolore
+            eveniet! Ipsam et quae recusandae tempore consequatur dignissimos voluptatem eos eum temporibus possimus,
+            nulla cum ratione?</p>
+    </div>
+    <div class="eliminar">
+        Cerrar
+    </div>
+    <script>
+        var capa= document.getElementsByClassName("capa");
+        var eliminar =document.getElementsByClassName("eliminar");
+
+        capa[0].addEventListener("scroll", function(event){
+            if(capa[0].offsetHeight + capa[0].scrollTop >= capa[0].scrollHeight){
+                eliminar[0].style.display="block";
+            }
+        });
+        eliminar[0].addEventListener("click",function(event){
+            capa[0].style.display="none";
+        });
+    </script>
+</body>
+
+</html>

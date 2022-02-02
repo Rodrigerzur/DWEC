@@ -7,26 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        form{
-            margin:auto;
-            width:30vw;
+        form {
+            margin: auto;
+            width: 30vw;
         }
-        fieldset{
-            border:2px solid black;
-            padding:10px;
-        }
-        .boton.onclick{
 
+        fieldset {
+            border: 2px solid black;
+            padding: 10px;
         }
-        .textoincidencia{
+
+        
+
+        .textoincidencia {
             display: none;
         }
+
+          
     </style>
 </head>
 
 <body>
     <div class="container">
-        <img src="" alt="">
+        <div class="img"></div>
         <form action="#">
             <fieldset>
                 <label for="Incidencia">Tipo de incidencia:</label>
@@ -37,18 +40,34 @@
                 </select>
                 <br><br>
                 <label for="nserie">Numero de serie:</label>
-                <input type="text" id="nserie" name="nserie" >
+                <input type="text" id="nserie" name="nserie">
                 <br><br>
                 <button type="button" class="boton">Mostrar incidencia</button>
                 <br><br>
                 <textarea name="textoincidencia" class="textoincidencia" rows="10" cols="30">
-                    
+
                 </textarea>
             </fieldset>
         </form>
     </div>
     <script>
-        
+        var boton = document.getElementsByClassName("boton");
+        var textoincidencia = document.getElementsByClassName("textoincidencia");
+        var incidencia = document.getElementById("incidencia");
+
+        boton[0].addEventListener("click", function (event) {
+            textoincidencia[0].style.display = "block";
+        });
+
+        var value = incidencia.value;
+
+        if (value == "Distribucion") {
+
+        } else if (value == "Oficina") {
+
+        } else if (value == "Produccion") {
+
+        }
     </script>
 </body>
 

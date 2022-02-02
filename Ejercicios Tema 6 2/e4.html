@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("fondo.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .titulo{
+            margin:auto;
+            margin-top:4%;
+            padding-bottom: 1rem;
+            color:red;
+            font-family:Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-size: 4em;
+            font-weight: bold;
+            width:fit-content;
+            border-bottom: 2px solid red;
+        }
+        form{
+            
+            margin:auto;
+        }
+
+        input[id="tarea"] {
+            position:relative;
+            margin-top: 2%;
+            margin-left: 35%;
+            border-radius: 10px;;
+            border:2px solid red;
+            width: 600px;
+            height: 60px;
+            font-size:2em;
+            background: transparent;
+        }
+        input[type="submit"]{
+            width:100px;
+            font-family: sans-serif;
+            border-radius: 10px;;
+            height: 66px;
+            font-size: 2em;
+            font-weight: bold;
+            color:white;
+            background:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="titulo">
+        Lista de tareas
+    </div>
+    <form action="#">
+        <input type="text" id="tarea" name="tarea" placeholder="Tarea"><input type="submit" value="+">
+    </form>
+    <div class="listaTareas">
+
+    </div>
+    <script>
+
+    </script>
+</body>
+</html>

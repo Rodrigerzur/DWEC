@@ -49,6 +49,17 @@
             color:white;
             background:red;
         }
+        .listaTareas{
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            list-style: none;
+        }
+        .listaTareas span{
+            color: white;
+            background: red;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -56,12 +67,41 @@
         Lista de tareas
     </div>
     <form action="#">
-        <input type="text" id="tarea" name="tarea" placeholder="Tarea"><input type="submit" value="+">
+        <input type="text" id="tarea" name="tarea" placeholder="Tarea"><input type="submit" value="+" id="boton">
     </form>
-    <div class="listaTareas">
+    <div class="listaTareas" id="listaTareas">
 
     </div>
     <script>
+        var botonadd= document.getElementById("boton");
+        botonadd.addEventListener("click", function (event) {
+            event.preventDefault();
+            addTask();
+        });
+
+        function addTask() {
+            var tarea = document.getElementById("tarea").value;
+            if(tarea.length>0){
+                var li = document.createElement('li');
+                li.id=tarea;
+                li.innerHTML=tarea+" <span id='eliminar' onclick='eliminar(elemento)'>Quitar</span>";
+                document.getElementById("listaTareas").appendChild(li);
+                li.addEventListener("click",function (event) {
+                    document.getElementById("listaTareas").insertBefore(event.target, document.getElementById("listaTareas").firstElementChild);
+                });
+
+            }
+            return false;
+        }
+
+        function eliminar(elemento){
+            var id =elemento.target.parentElement;
+            document.getElementById("listaTareas").removeChild(id);
+            
+            elemento.stopPropagation();
+        }
+
+
 
     </script>
 </body>

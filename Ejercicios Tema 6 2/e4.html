@@ -83,8 +83,12 @@
             var tarea = document.getElementById("tarea").value;
             if(tarea.length>0){
                 var li = document.createElement('li');
+                var boton= document.createElement('span');
                 li.id=tarea;
-                li.innerHTML=tarea+" <span id='eliminar' onclick='eliminar(elemento)'>Quitar</span>";
+                li.innerHTML=tarea;
+                boton.innerHTML="Quitar";
+                li.appendChild(boton);
+                boton.addEventListener("click", eliminar);
                 document.getElementById("listaTareas").appendChild(li);
                 li.addEventListener("click",function (event) {
                     document.getElementById("listaTareas").insertBefore(event.target, document.getElementById("listaTareas").firstElementChild);

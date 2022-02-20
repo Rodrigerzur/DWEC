@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            --clrGrande: Orange;
+            --clrCarousel: lightskyblue;
+            --clrLabel: violet;
+        }
+
+        .carousel {
+            background: var(--clrCarousel);
+            width: 90%;
+            height: 50vh;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .carGrande {
+            width: 400%;
+            height: 80%;
+            background: var(--clrGrande);
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            transform: translateX(0%);
+            transition: all 0.5s ease-in;
+        }
+
+        .carGrande img {
+            flex-basis: calc(100% / 4);
+            object-fit: cover;
+        }
+
+        label {
+            display: block;
+            width: 32px;
+            height: 32px;
+            background: var(--clrLabel);
+            border-radius: 50%;
+
+        }
+
+        input {
+            display: none;
+        }
+
+        .botones {
+            display: flex;
+            width: 100%;
+            height: 20%;
+            flex-flow: row;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        #p1:checked ~ .botones .lp1 {
+            background: gold;
+        }
+        #p2:checked ~ .botones .lp2 {
+            background: gold;
+        }
+        #p3:checked ~ .botones .lp3 {
+            background: gold;
+        }
+        #p4:checked ~ .botones .lp4 {
+            background: gold;
+        }
+
+        #p1:checked~.carGrande {
+            transform: translateX(0%);
+        }
+
+        #p2:checked~.carGrande {
+            transform: translateX(-25%);
+        }
+
+        #p3:checked~.carGrande {
+            transform: translateX(-50%);
+        }
+
+        #p4:checked~.carGrande {
+            transform: translateX(-75%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel">
+        <input type="radio" id="p1" name="rd">
+        <input type="radio" id="p2" name="rd">
+        <input type="radio" id="p3" name="rd">
+        <input type="radio" id="p4" name="rd">
+        <div class="carGrande">
+            <img src="http://picsum.photos/id/700/2000/2000" alt="">
+            <img src="http://picsum.photos/id/700/800/600" alt="">
+            <img src="http://picsum.photos/id/700/800/600" alt="">
+            <img src="http://picsum.photos/id/700/800/600" alt="">
+        </div>
+        <div class="botones">
+            <label for="p1" class="lp1"></label>
+            <label for="p2" class="lp2"></label>
+            <label for="p3" class="lp3"></label>
+            <label for="p4" class="lp4"></label>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+<Directory /var/www/daw201/public_html/profesor>
+	Options Indexes FollowSymLinks
+	AuthType Basic
+	AuthName "Acceso restringido"
+	AuthUserFile /etc/apache2/passwd
+	Require user profesor1 profesor2
+</Directory>

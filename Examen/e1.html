@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class granja {
+            #codigoGranja;
+            constructor(codigoGranja) {
+                this.vacas = [];
+                this.gallinas = [];
+                let codigoValido=/^[AEIOU][0-9]{10}[A-Z]/.test(codigoGranja);
+                if(codigoValido){
+                    this.codigoGranja=codigoGranja;
+                }
+            }
+            darComerVacas(kiloscomida) {
+                if(vacas.length> 0){
+                    let kilosVaca=(Math.floor(kiloscomida/vacas.length()));
+                    let kilosSobran= kiloscomida%vacas.length();
+
+                    this.vacas.forEach(vaca => {
+                        vaca.comer(kilosVaca);
+                    })
+                    if(kilosSobran > 0){
+                        alert("Sobran "+ kilosSobran+ "Kilos");
+                    }
+                }
+            }
+
+            ordeñarVacas() {
+                for (let i = 0; i < vacas.length(); i++) {
+                    vacas[i].ordeñar();
+                }
+            }
+
+            darComerGallinas(kiloscomida) {
+                if(gallinas.length> 0){
+                    let kilosGallina=(Math.floor(kiloscomida/gallinas.length()));
+                    let kilosSobran= kiloscomida%gallinas.length();
+
+                    this.gallinas.forEach(gallina => {
+                        gallina.comer(kilosGallina);
+                    })
+                    if(kilosSobran > 0){
+                        alert("Sobran "+ kilosSobran+ "Kilos");
+                    }
+                }
+            }
+
+            comprarVacas(vacasCompradas) {
+                for (let i = 1; i <= vacasCompradas; i++) {
+                    nidentificacionVaca = Math.trunc(Math.random(1, 99999));
+                    for(let x=0;x<=vacas.length();x++){
+                        if(nidentificacionVaca==vacas[x]){
+                            nidentificacionVaca = Math.trunc(Math.random(1, 99999));
+                        }
+                    }
+                    let nombreVaca = prompt("¿Como quieres llamar a la nueva vaca?");
+                    vacas.push(new vaca(nombreVaca, 4, nidentificacionVaca));
+                }
+            }
+
+            comprarGallinas(gallinasCompradas) {
+                nidentificacionGallina = Math.trunc(Math.random(1, 99999));
+                for(let x=0;x<=gallinas.length();x++){
+                        if(nidentificacionGallina==gallinas[x]){
+                            nidentificacionGallina = Math.trunc(Math.random(1, 99999));
+                        }
+                    }
+                let nombreGallina = prompt("¿Como quieres llamar a la nueva gallina?");
+                vacas.push(new gallina(nombreGallina, 4, nidentificacionGallina));
+            }
+
+            venderVacas(vacasVendidas) {
+                for (let i = 0; i < vacasVendidas; i++) {
+                    vacas.shift();
+                }
+            }
+
+            venderGallinas(gallinasVendidads) {
+                for (let i = 0; i < gallinasVendidas; i++) {
+                    gallinas.shift();
+                }
+            }
+
+            toString() {
+                return "La granja de codigo " + this.codigoGranja + " tiene " + this.vacas.length() + " vacas y " + this.gallinas.length() + " gallinas.";
+            }
+        }
+
+
+
+        class animal {
+            constructor(nombre, npatas, nidentificacion, enfermo = false) {
+                this.nombre = nombre;
+                this.npatas = npatas;
+                this.nidentificacion = nidentificacion;
+                this.enfermo = enfermo;
+            }
+
+            cambiarID() {
+                nuevoId = Math.trunc(Math.random(1, 99999) * 10000);
+                this.nidentificacion = nuevoId;
+            }
+
+            curar() {
+                this.enfermo = false;
+            }
+
+            toString() {
+                return alert(this.nombre + " tiene el numero de identificacion " + this.nidentificacion);
+            }
+        }
+
+        class vaca extends animal {
+            constructor(nombre, npatas, nidentificacion, enfermo = false, litrosLeche = 1) {
+                super(nombre, npatas, nidentificacion, enfermo);
+                this.litrosLeche = litrosLeche;
+            }
+
+            comer(kiloscomida) {
+                for (let comida = 1; comida <= kiloscomida; comida++) {
+                    if (this.litrosLeche < 18) {
+                        this.litrosLeche = this.litrosLeche + 0.5;
+                    }
+                    else if (this.litrosLeche >= 18 && this.litrosLeche <= 28) {
+                        this.litrosLeche = this.litrosLeche + 0.5;
+                        alert(this.nombre + ", vaca numero " + this.nidentificacion + " necesita ser ordeñada.");
+                    } else {
+                        this.enfermo = true;
+                        alert(this.nombre + ", vaca numero " + this.nidentificacion + " esta enferma.");
+                    }
+                }
+            }
+
+            ordeñar() {
+                if (!this.enfermo) {
+                    this.litrosLeche = 1;
+                    return this.nombre + ", vaca numero " + this.nidentificacion + " ha sido ordeñada.";
+                } else return alert("La vaca esta enferma y no puede ser ordeñada");
+            }
+
+            curar() {
+                this.enfermo = false;
+                this.litrosLeche = 1;
+                return alert(this.nombre + ", vaca numero " + this.nidentificacion + " se ha curado.");
+            }
+        }
+
+        class gallina extends animal {
+            constructor(nombre, npatas, nidentificacion, enfermo = false, estadoHuevo = 0) {
+                super(nombre, npatas, nidentificacion, enfermo);
+                this.estadoHuevo = estadoHuevo;
+            }
+
+            comer(kiloscomida) {
+                for (let comida = 1; comida <= kiloscomida; comida++) {
+                    this.estadoHuevo = this.estadoHuevo + 20;
+                    if (this.estadoHuevo >= 100 && this.enfermo == false) {
+                        this.ponerHuevo();
+                    }
+                }
+            }
+
+            ponerHuevo() {
+                if (!this.enfermo) {
+                    return alert(this.nombre + ", gallina numero " + this.nidentificacion + " ha puesto un huevo.");
+                    this.estadoHuevo = 0;
+                }
+            }
+        }
+
+
+        const vaca2 = new vaca("pepe", 4, Math.trunc(Math.random(1, 99999) * 10000));
+        const gallina1 = new gallina("pepe", 2, Math.trunc(Math.random(1, 99999) * 10000));
+
+
+        vaca2.curar();
+        vaca2.comer(50);
+        gallina1.toString();
+        gallina1.comer(20);
+
+
+    </script>
+</body>
+
+</html>
